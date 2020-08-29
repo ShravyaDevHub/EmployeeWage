@@ -1,7 +1,7 @@
 #! /bin/bash
 wagePerHour=20
-hours=8
-workingDays=20
+hours=1
+workingDays=1
 while [ $hours -le 100 ] || [ $workingDays -le 20 ]
 do
 	attendance=$(( RANDOM%3 ))
