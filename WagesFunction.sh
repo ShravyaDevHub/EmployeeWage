@@ -3,7 +3,7 @@ wagePerHour=20
 hours=1
 workingDays=1
 function Wages() {
-	while [ $hours -le 100 ] || [ $workingDays -le 20 ]
+	while [ $hours -le 100 ] && [ $workingDays -le 20 ]
 	do
    	attendance=$(( RANDOM%3 ))
    	case $attendance in
