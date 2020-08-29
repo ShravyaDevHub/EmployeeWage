@@ -3,12 +3,12 @@ wagePerHour=20
 hours=1
 workingDays=1
 function Wages() {
-	while [ $hours -le 100 ] || [ $workingDays -le 20 ]
+	while [ $hours -le 100 ] && [ $workingDays -le 20 ]
 	do
    	attendance=$(( RANDOM%3 ))
    	case $attendance in
-      	0) totalWage=$(( wagePerHour*0*workingDays ))
-				dailyWage=$(( wagePerHour*0 ))
+      	0) totalWage=$(( totalWage+wagePerHour*0*workingDays ))
+				dailyWage=$(( dailyWage+wagePerHour*0 ))
          	(( workingDays++ ))
          	;;
       	1) totalWage=$(( wagePerHour*(hours/2)*workingDays ))
@@ -23,7 +23,7 @@ function Wages() {
          	;;
    	esac
 done
-echo $totalWage
+echo "Daily wage = $dailyWage, Total wage = $totalWage"
 }
 totalWage="$( Wages )"
 echo $totalWage
