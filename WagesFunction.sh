@@ -7,14 +7,14 @@ function Wages() {
 	do
    	attendance=$(( RANDOM%3 ))
    	case $attendance in
-      	0) totalWage=$(( wagePerHour*0 ))
+      	0) totalWage=$(( wagePerHour*0*workingDays ))
          	(( workingDays++ ))
          	;;
-      	1) totalWage=$(( wagePerHour*(hours/2) ))
+      	1) totalWage=$(( wagePerHour*(hours/2)*workingDays ))
          	hours=$(( hours+4 ))
          	(( workingDays++ ))
          	;;
-      	*) totalWage=$(( wagePerHour*hours ))
+      	*) totalWage=$(( wagePerHour*hours*workingDays ))
          	hours=$(( hours+8 ))
 				(( workingDays++ ))
          	;;
